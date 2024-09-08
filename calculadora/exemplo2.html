@@ -3,32 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>Aula Desafio</title>
 </head>
 <body>
+    <h1>Calculadora</h1>
     <div>
         <h3>Resultado: <span >0</span></h3>
         <input type="text" id="valor1" >
         <input type="text" id="valor2" >
         <section>
             <button id="btn_somar" >
-                <ion-icon name="add-circle-outline"></ion-icon>
+                <i class="bi bi-plus-lg"></i>
             </button>
             <button id="btn_sub" >
-                <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                <i class="bi bi-dash-lg"></i>
             </button>
             <button id="btn_div"   >
-                <ion-icon name="pencil-outline"></ion-icon>
+                <i class="bi bi-slash-lg"></i>
             </button>
             <button id="btn_mult"      >
-                <ion-icon name="add-circle-outline"></ion-icon>
+                <i class="bi bi-x-lg"></i>
             </button>
         </section>
     </div>
 
     <style>
-        *{ margin: 0; padding: 0; box-sizing: border-box;}
+        *{ margin: 0; padding: 0; box-sizing: border-box; border:none; outline: none;}
         body{
             color: #fff;
             background-color: #1c1c1c;
@@ -40,8 +41,8 @@
             align-items: center;
         }
         div{
-            width: 180px;
-            height: 170px;
+            width: 280px;
+            height: 270px;
             background-color: blueviolet;
 
             padding: 20px;
@@ -57,22 +58,22 @@
             outline: 0; 
             padding: 5px; 
             border-radius: 3px;
-            width: 80px;
+            width: 180px;
             font-weight: bold;
 
             text-align: center;
             transition: .9s;
         }
         input:focus{
-            width: 130px;
+            width: 230px;
         }
         section{
-            gap: 3px;
+            gap: 5px;   
             display: flex;
         }
         button{
-            height: 30px;
-            width:  30px;
+            height: 40px;
+            width:  40px;
             border-radius: 50%;
 
             display: flex;
@@ -86,7 +87,11 @@
             height: 50px;
             width:  50px;
             font-size: 1.8em;
-            transform: rotate(1060deg);
+            transform: rotate(360deg);
+        }
+
+        .bi-slash-lg{
+            transform: rotate(90deg);
         }
     </style>
 
