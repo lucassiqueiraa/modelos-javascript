@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula Desafio</title>
+</head>
+<body>
+    <h3>Resultado: <span >0</span></h3>
+    <input type="text" id="valor1" >
+    <input type="text" id="valor2" >
+    <button id="btn_somar" >+</button>
+    <button id="btn_sub" >-</button>
+    <button id="btn_div"   >/</button>
+    <button id="btn_mult"      >*</button>
+
+    <script>
+        // 1.  Testes se null
+            // continue ... 
+        var rs = document.querySelector("span");
+        const valor1 = document.querySelector('#valor1');
+        const valor2 = document.querySelector('#valor2');
+        const btn_somar = document.querySelector("#btn_somar")
+        const btn_sub = document.querySelector("#btn_sub")
+        const btn_div = document.querySelector("#btn_div")
+        const btn_mult = document.querySelector("#btn_mult")
+        var btn = document.querySelector('button');
+
+        function validar(){
+            if(!valor1.value || !valor2.value){
+                alert('Preencher os campos')
+                return false
+            }
+        }
+
+        btn_somar.onclick = (e) => {
+            e.preventDefault()
+
+            validar()
+
+            v1 = parseFloat(valor1.value) 
+            v2 = parseFloat(valor2.value) 
+            
+            resultado = v1 + v2
+
+            if(resultado){ rs.textContent = resultado }
+        }
+        btn_sub.onclick = (e) =>  {
+            e.preventDefault()
+
+            validar()
+
+            v1 = parseFloat(valor1.value) 
+            v2 = parseFloat(valor2.value) 
+
+            resultado = v1 - v2
+
+            if(resultado){ rs.textContent = resultado }
+         }
+        btn_mult.onclick = (e) =>    { 
+            e.preventDefault()
+
+            validar()
+
+            v1 = parseFloat(valor1.value) 
+            v2 = parseFloat(valor2.value) 
+
+            resultado = v1 * v2
+
+            if(resultado){ rs.textContent = resultado }
+         }
+        btn_div.onclick = (e) => {
+            e.preventDefault()
+
+            validar()
+
+            v1 = parseFloat(valor1.value) 
+            v2 = parseFloat(valor2.value) 
+
+            resultado = (v1 / v2).toFixed(2)
+
+            if(resultado){ rs.textContent = resultado }
+        }
+    </script>
+</body>
+</html>

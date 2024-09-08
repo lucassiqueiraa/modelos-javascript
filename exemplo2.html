@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <title>Aula Desafio</title>
+</head>
+<body>
+    <div>
+        <h3>Resultado: <span >0</span></h3>
+        <input type="text" id="valor1" >
+        <input type="text" id="valor2" >
+        <section>
+            <button id="btn_somar" >
+                <ion-icon name="add-circle-outline"></ion-icon>
+            </button>
+            <button id="btn_sub" >
+                <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+            </button>
+            <button id="btn_div"   >
+                <ion-icon name="pencil-outline"></ion-icon>
+            </button>
+            <button id="btn_mult"      >
+                <ion-icon name="add-circle-outline"></ion-icon>
+            </button>
+        </section>
+    </div>
+
+    <style>
+        *{ margin: 0; padding: 0; box-sizing: border-box;}
+        body{
+            color: #fff;
+            background-color: #1c1c1c;
+            height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        div{
+            width: 180px;
+            height: 170px;
+            background-color: blueviolet;
+
+            padding: 20px;
+            border-radius: 10px;
+
+            gap: 10px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        input{ 
+            border: 0; 
+            outline: 0; 
+            padding: 5px; 
+            border-radius: 3px;
+            width: 80px;
+            font-weight: bold;
+
+            text-align: center;
+            transition: .9s;
+        }
+        input:focus{
+            width: 130px;
+        }
+        section{
+            gap: 3px;
+            display: flex;
+        }
+        button{
+            height: 30px;
+            width:  30px;
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            cursor: pointer;
+            transition: .9s;
+        }
+        button:hover{
+            height: 50px;
+            width:  50px;
+            font-size: 1.8em;
+            transform: rotate(1060deg);
+        }
+    </style>
+
+    <script>
+        // 1.  Testes se null
+            // continue ... 
+        var rs = document.querySelector("span");
+        const valor1 = document.querySelector('#valor1');
+        const valor2 = document.querySelector('#valor2');
+        const btn_somar = document.querySelector("#btn_somar")
+        const btn_sub = document.querySelector("#btn_sub")
+        const btn_div = document.querySelector("#btn_div")
+        const btn_mult = document.querySelector("#btn_mult")
+        var btn = document.querySelector('button');
+
+        function validar(){
+            if(!valor1.value || !valor2.value){
+                alert('Preencher os campos')
+                return false
+            }
+        }
+
+        btn_somar.onclick = (e) => {
+            e.preventDefault()
+
+            validar()
+
+            v1 = parseFloat(valor1.value) 
+            v2 = parseFloat(valor2.value) 
+            
+            resultado = v1 + v2
+
+            if(resultado){ rs.textContent = resultado }
+        }
+        btn_sub.onclick = (e) =>  {
+            e.preventDefault()
+
+            validar()
+
+            v1 = parseFloat(valor1.value) 
+            v2 = parseFloat(valor2.value) 
+
+            resultado = v1 - v2
+
+            if(resultado){ rs.textContent = resultado }
+         }
+        btn_mult.onclick = (e) =>    { 
+            e.preventDefault()
+
+            validar()
+
+            v1 = parseFloat(valor1.value) 
+            v2 = parseFloat(valor2.value) 
+
+            resultado = v1 * v2
+
+            if(resultado){ rs.textContent = resultado }
+         }
+        btn_div.onclick = (e) => {
+            e.preventDefault()
+
+            validar()
+
+            v1 = parseFloat(valor1.value) 
+            v2 = parseFloat(valor2.value) 
+
+            resultado = (v1 / v2).toFixed(2)
+
+            if(resultado){ rs.textContent = resultado }
+        }
+    </script>
+</body>
+</html>
