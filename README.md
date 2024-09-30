@@ -2,3 +2,4 @@
 * Exemplo Local para testar gitKraken
 * outra linha
 * teste2
+* teste3
